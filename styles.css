@@ -16,7 +16,7 @@ font-size: 1em;
 .navbar {
     height: 70px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1rem;
     top: 0px;
@@ -39,7 +39,7 @@ font-size: 1em;
     width: 100%;
     max-width: 1900px;
     margin: 0 auto;
-    padding: 0 5em 0 9em;
+    padding: 0 5em 0 5em;
 
 
 }
@@ -101,6 +101,7 @@ transition: all 0.3s ease;
     width:60%;
     flex-grow: 1;
     flex-shrink: 1;
+    text-align: right;
 
 }
 
@@ -191,12 +192,15 @@ h3::before{
 
 .portfolio-item {
     display: flex;
-    width: 90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
     padding-top: 5%;
     margin: 0px auto;
     justify-content: space-between;
     position: relative;
     background-color: transparent;
+    max-width: 792px;
 }
 .portfoliophoto {
     display: block;
@@ -221,11 +225,12 @@ h3::before{
     display: block;
     position: relative;
     width: 40%;
+    flex-shrink: 5;
 }
 
 .portfoliotext p {
     margin-top: 5%;
-    font-size: 1.1em;
+    font-size: 100%;
     margin-left: 1%;
     font-weight: 100;
     color: rgb(116, 116, 116);
@@ -265,15 +270,27 @@ background-color: #e6e6e6;
 
 .Contact_container{
     position: relative;
-    padding: 120px 0;
+    padding: 10% 0;
     background-color: #ffffff;
-    
+    min-width: 200px;;
+    }
+
+    .contact-item {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-top: 5%;
+        margin: 0px auto;
+        justify-content: space-between;
+        position: relative;
+        background-color: transparent;
     }
 
 .contacttext{
     display: block;
     position: relative;
-    width: 40%;
+    width: 100%;
         
     }
 
@@ -287,13 +304,65 @@ background-color: #e6e6e6;
     }
 .contactheader{
     font-weight: 900 !important;
-    font-size: 2.5rem;
+    font-size: 2.5em;
     text-decoration: none;
-    color: black;
-            
+    color: black;            
         }   
 
-
+        .socialbox {
+            height: 30px;
+            width: 30px;
+            display: block;
+            padding-right: 15%;
+            min-width: 50px;
+        }
+        
+        .iconlinkedin {
+            background-image: url('linkedIn.png');
+            height: 30px;
+            width: 30px;
+            background-size: cover;
+            display: block;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        
+        .icongithub {
+            background-image: url('github.png');
+            height: 30px;
+            width: 30px;
+            display: block;
+            background-size: cover;
+        }
+        
+        .iconmail {
+            background-image: url('mail.png');
+            height: 30px;
+            width: 30px;
+            display: block;
+            background-size: cover;
+        }
+        
+        .iconmessenger {
+            background-image: url('messenger.png');
+            height: 30px;
+            width: 30px;
+            display: block;
+            background-size: cover;
+        }
+        
+        .socialflex{
+            display: flex;
+            justify-content: flex-start;
+            height: 70px;
+            z-index: 999;
+            width: 100%;
+            min-width: 200px;
+            max-width: 1900px;
+            margin: 0 auto;
+            padding: 5em 0em 2em 0.1em;
+        }
 
 
 @media screen and (max-width: 700px) {
@@ -318,6 +387,7 @@ background-color: #e6e6e6;
         height: 100%;
     }
 }
+
 @media screen and (max-width: 1000px) {
     .header_photo img {
         height: 80vh;
@@ -337,21 +407,25 @@ background-color: #e6e6e6;
         height: 100%;
     }
 }
+
 @media screen and (max-width: 850px) {
     .header_photo img {
-        height: 70vh;
-        width: auto;
+        height: auto;
+        width: 75vw;
     }
     .header_container {
         height: 100%;
     }
 }
+
 @media screen and (max-width: 790px) {
+    .header_photo {
+        height: 100%;
+        margin-top:0%;
+        }
     .header_photo img {
-        height: auto;
-        width: 100vw;
-        padding-top: 0%;
-    }
+        height: 75vw;
+        }
     .header_container {
         flex-wrap: wrap;
     }
@@ -362,65 +436,164 @@ background-color: #e6e6e6;
         padding: 30% 0% 0% 5% ;
         margin: 0 0;
     }
+    .portfolio_container {
+        padding: 90px 0;
+    }
+
+        .portfolio-item {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 90%;
+            padding-top: 5%;
+            margin: 0px auto;
+            justify-content: space-between;
+            position: relative;
+            background-color: transparent;
+            align-items: center;
+        }
+
+        #waterq {
+            display: flex;
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            width: 90%;
+            padding-top: 5%;
+            margin: 0px auto;
+            justify-content: space-between;
+            position: relative;
+            background-color: transparent;
+            align-items: center;
+        }
+
+        .portfoliotext {
+            display: block;
+            position: relative;
+            width: 90%;
+            text-align: center;
+        }
+        
+
+        .portfoliophoto {
+            display: block;
+            position: relative;
+            width: 90%;
+            padding-top: 10%;
+            margin: 0,auto;
+        }
+
+        .portfoliophoto img{
+            display:block;
+      margin-left: auto;
+      margin-right:auto;
+        }
+    
 }
 
+@media screen and (max-width: 650px) {
+
+        .header_photo {
+            height: 100%;
+            margin-top:15%;
+            }
+
+    .contactheader{
+        font-size: 1.5em;
+        margin-left: 1%;
+    }
+
+    .socialbox {
+        height: 30px;
+        width: 30px;
+        display: block;
+        padding-right: 0%;
+        }
+}
+
+@media screen and (max-width: 470px) {
+        .header_photo {
+            height: 100%;
+            margin-top:35% ;
+            }
+    .navbar__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+    .navbar__menu {
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+        height: 50vh;
+        z-index: 999;
+        background: #131313;
+    }
+
+    .navbar__menu.active {
+        background: #131313;
+        top: 0%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: -1;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    .navbar__toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: rgb(0, 0, 0);
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar__toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
 /* Setting fonts */
 
 h5 {
     font-weight: 900 !important;
     font-size: 2.5rem;
-}
-
-.socialbox {
-    height: 30px;
-    width: 30px;
-    display: block;
-    padding-right: 25%;
-    min-width: 100px;
-}
-
-.iconlinkedin {
-    background-image: url('linkedIn.png');
-    height: 30px;
-    width: 30px;
-    background-size: cover;
-    display: block;
-    align-items: center;
-    text-decoration: none;
-}
-
-
-.icongithub {
-    background-image: url('github.png');
-    height: 30px;
-    width: 30px;
-    display: block;
-    background-size: cover;
-}
-
-.iconmail {
-    background-image: url('mail.png');
-    height: 30px;
-    width: 30px;
-    display: block;
-    background-size: cover;
-}
-
-.iconmessenger {
-    background-image: url('messenger.png');
-    height: 30px;
-    width: 30px;
-    display: block;
-    background-size: cover;
-}
-
-.socialflex{
-    display: flex;
-    justify-content: flex-start;
-    height: 70px;
-    z-index: 999;
-    width: 100%;
-    max-width: 1900px;
-    margin: 0 auto;
-    padding: 5em 5em 0 0.1em;
 }
