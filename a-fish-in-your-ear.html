@@ -1,0 +1,614 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"e7fb1b89a0",applicationID:"750147145"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name=keywords  content="Google Translate,UX,Interaction design,google" />
+      <meta name=description  content="How we improved Google Translate's conversation mode." />
+      <meta name=twitter:card  content="summary_large_image" />
+      <meta name=twitter:site  content="@AdobePortfolio" />
+      <meta  property=og:title content="Pendar Yousefi - A fish in your ear" />
+      <meta  property=og:description content="How we improved Google Translate's conversation mode." />
+      <meta  property=og:image content="https://pro2-bar-s3-cdn-cf.myportfolio.com/e63b121980737e2194086a9850ceea9c/b24467ad-7c83-4210-8be8-be73c767ad28_rwc_0x45x2540x1114x2540.jpg?h=0cd6843b25dbe911ed2c5c887b7a3277" />
+      <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURUxpcU3H2DoAAAABdFJOUwBA5thmAAAADElEQVQI12NgIA0AAAAwAAHHqoWOAAAAAElFTkSuQmCC"  />
+      <link rel="stylesheet" href="/dist/css/main.css" type="text/css" />
+      <link rel="stylesheet" href="https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/717829a48b5fad64747b7bf2f577ae731546131934.css?h=3b0eae291088f9e30c14277d6e5aad9a" type="text/css" />
+    <link rel="canonical" href="https://mahimoto.com/a-fish-in-your-ear" />
+      <title>Pendar Yousefi - A fish in your ear</title>
+</head>
+        <body class="transition-enabled">  <div class="js-responsive-nav">
+    <div class="responsive-nav">
+      <div class="close-responsive-click-area js-close-responsive-nav">
+        <div class="close-responsive-button"></div>
+      </div>
+          <nav class="js-editable-target editable">
+            <div class="pages">
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+    <div class="gallery-title"><a href="/projects" >Projects</a></div>
+            </div>
+          </nav>
+    </div>
+  </div>
+  <div class="site-wrap cfix js-site-wrap">
+      <header class="site-header js-editable-target editable" data-context="theme.topcontainer">
+          <div class="logo-wrap js-editable-target editable">
+                <div class="logo logo-text  ">
+    <a href="/projects" class="preserve-whitespace">Pendar Yousefi</a>
+
+</div>
+          </div>
+  <div class="hamburger-click-area js-hamburger">
+    <div class="hamburger">
+      <i></i>
+      <i></i>
+      <i></i>
+    </div>
+  </div>
+            <nav class="js-editable-target editable">
+              <div class="pages">
+      <div class="page-title">
+        <a href="/about" >About</a>
+      </div>
+    <div class="gallery-title"><a href="/projects" >Projects</a></div>
+              </div>
+            </nav>
+      </header>
+    <div class="site-container">
+      <div class="site-content">
+        <main>
+  <div class="page-container js-editable-target editable" data-context="page.page.container">
+    <section class="page standard-modules">
+        <header class="page-header content js-editable-target editable" data-context="pages" data-identity="id:p5ad77d75ae132c6306dff98f884185d9d18843a192e61fc0371b2" data-menu="Page Header">
+            <h1 class="title preserve-whitespace">A fish in your ear</h1>
+        </header>
+      <div class="page-content js-page-content js-editable-target editable" data-context="pages" data-identity="id:p5ad77d75ae132c6306dff98f884185d9d18843a192e61fc0371b2" data-menu="Page Content">
+        <div id="project-canvas" class="js-project-modules modules content">
+          <div id="project-modules">
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Humans have been fascinated with magical devices that break language barriers for as long as languages have existed. At Google Translate, I had the opportunity to work on a product that helps us get one step closer to realizing the magic.</div><div class="main-text"><br></div><div class="sub-title">Discovering the magic</div><div class="main-text">Google Translate apps have a few features that never cease to amaze people: instant camera translations, and real-time voice interpretation. Beyond their wow-inducing nature, they are extremely useful as well, helping language learners, students, tourists, and all sorts of people who need to break through language barriers.</div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/e63b121980737e2194086a9850ceea9c/53b7b9f5-0096-432c-86c1-db4572349d13.gif?h=4df28dcd40f404f28ee0e146894c2847">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf4.myportfolio.com/e63b121980737e2194086a9850ceea9c/53b7b9f5-0096-432c-86c1-db4572349d13_rw_600.gif?h=dc064ecee6f371e2e6f5b90f0996965f"
+            data-srcset="https://pro2-bar-s3-cdn-cf4.myportfolio.com/e63b121980737e2194086a9850ceea9c/53b7b9f5-0096-432c-86c1-db4572349d13_rw_600.gif?h=dc064ecee6f371e2e6f5b90f0996965f 400w,"
+            data-sizes="(max-width: 400px) 100vw, 400px"
+            width="400"
+            height="0"
+            style="padding-bottom: 75%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:nqdy;font-weight:700;"><span class="texteditor-inline-fontsize" style="font-size:20px;">THE PROBLEM<br></span></span>Unfortunately, many of our users did not know these features existed. We first got a hunch when we noticed people asking for these features that we already had in user interviews. We confirmed that by running a survey which showed almost 40% of our users did not know we had these tools.<br></div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/247a7b66-0152-4cb4-a1cd-68007e1cbba1.png?h=b4f321c510807bc9a83791c4a241bbde">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/247a7b66-0152-4cb4-a1cd-68007e1cbba1_rw_1920.png?h=dc9d5173c78001f07ac08772a1615d03"
+            data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/247a7b66-0152-4cb4-a1cd-68007e1cbba1_rw_600.png?h=ac6fdc263826462bef4f4b0ec8b66f7d 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/247a7b66-0152-4cb4-a1cd-68007e1cbba1_rw_1200.png?h=e314ad1f29f1edc70c211b7e3a035fb3 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/247a7b66-0152-4cb4-a1cd-68007e1cbba1_rw_1920.png?h=dc9d5173c78001f07ac08772a1615d03 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:nqdy; font-weight:700;"><span style="font-size:20px;" class="texteditor-inline-fontsize">FIRST ATTEMPTS</span></span><br>Our hypothesis was that the entry points into these tools were too small and hidden. Our first instinct was to make them bigger and more noticeable. So we experimented with new UIs that did just that. <span style="font-family:jyxm; font-weight:700;">To our surprise, this had the opposite effect! Usage of camera and conversation actually went down. </span>So what was going on? When we dug in, we found that many people simply ignored colorful things below the main box, often assuming they were unimportant ads or promotions. We even got complaints from a senior engineer in a team that works closely with Translate about not being able to find the conversation feature. He happened to be in our small experiment, and despite being very familiar with the product he had simply ignored the new buttons in the UI.</div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/2a314e46-e76e-47b4-9efa-a210ea5ca79d.png?h=036c0fd30a7cfa57bf02e4524ad65943">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/2a314e46-e76e-47b4-9efa-a210ea5ca79d_rw_1920.png?h=a9261a0119cd0a4e4f97e5873df3c947"
+            data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/2a314e46-e76e-47b4-9efa-a210ea5ca79d_rw_600.png?h=dd681f6f73aed999e937daa1c31160be 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/2a314e46-e76e-47b4-9efa-a210ea5ca79d_rw_1200.png?h=cddf3393b03daf39eac6e0be99ec0072 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/2a314e46-e76e-47b4-9efa-a210ea5ca79d_rw_1920.png?h=a9261a0119cd0a4e4f97e5873df3c947 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/252d40b4-f96b-4f3f-ba62-41607dc27d08.png?h=0b26f1cc953ee7ec375f161fd6e5e74f">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/252d40b4-f96b-4f3f-ba62-41607dc27d08_rw_1920.png?h=4a23ddf5d5559e5ce253e669a828ab06"
+            data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/252d40b4-f96b-4f3f-ba62-41607dc27d08_rw_600.png?h=bf16eb310d7a96a5b438ef5f6475ab82 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/252d40b4-f96b-4f3f-ba62-41607dc27d08_rw_1200.png?h=5bde5d784cc1cbfa750e6c2e860d75ff 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/252d40b4-f96b-4f3f-ba62-41607dc27d08_rw_1920.png?h=4a23ddf5d5559e5ce253e669a828ab06 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:nqdy; font-weight:700;"><span style="font-size:20px;" class="texteditor-inline-fontsize">BACK TO THE DRAWING BOARD</span></span><br>So we went back to the drawing board and asked ourselves; what is the minimum changes we can make to the existing UI that people were familiar with to make those features more clearly visible? We tweaked the icons, added text labels, and split the voice feature into the two important but separate use cases: dictation and conversation. <span style="font-family:jyxm; font-weight:700;">This worked! Usage of all features increased across the board, with the handwriting being used as much as 25% more than it was before! </span><span style="font-family:jyxm;font-weight:300;">We even started seeing tweets from people who thought these were new features, even though they existed for years.</span><span style="font-family:jyxm; font-weight:700;"></span></div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6553f6ee-4ce1-4571-8381-c29e67806f63.png?h=d59826d891033f3280291ea4a83eaacc">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6553f6ee-4ce1-4571-8381-c29e67806f63_rw_1920.png?h=230ac40d6d2c84217ad0a8160f87e6bb"
+            data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6553f6ee-4ce1-4571-8381-c29e67806f63_rw_600.png?h=765c42a89c816b6c4bc7cd8508d947c0 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6553f6ee-4ce1-4571-8381-c29e67806f63_rw_1200.png?h=f0c706fcb0674a780c24f9fba6143b85 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6553f6ee-4ce1-4571-8381-c29e67806f63_rw_1920.png?h=230ac40d6d2c84217ad0a8160f87e6bb 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/3f3d7c7b-fcbd-4e84-bf73-ed0bc0b82dd9.png?h=7ae60de50a46eee296abe2ef546fd303">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/3f3d7c7b-fcbd-4e84-bf73-ed0bc0b82dd9_rw_1920.png?h=089925434bd29f9f5ca983cf7c2af24b"
+            data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/3f3d7c7b-fcbd-4e84-bf73-ed0bc0b82dd9_rw_600.png?h=22d89026a5ba44fc5d0a6f93a30acdba 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/3f3d7c7b-fcbd-4e84-bf73-ed0bc0b82dd9_rw_1200.png?h=52de4b5cd25cf8f5188d4b3a89cd8863 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/3f3d7c7b-fcbd-4e84-bf73-ed0bc0b82dd9_rw_1920.png?h=089925434bd29f9f5ca983cf7c2af24b 1781w,"
+            data-sizes="(max-width: 1781px) 100vw, 1781px"
+            width="1781"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="sub-title">Improving the conversation UI</div><div class="main-text">We didn't stop there. At Google Translate we're always thinking about how we can improve the product experience for our users. We wanted to make the conversation mode UI easier and more intuitive to use.</div><div class="main-text">Our old conversation mode UI had 3 buttons: two buttons in the left and right for each language, and a big mic icon in the middle which we sometimes referred to as the magic mic. The magic mic was supposed to know when people were talking, what language they were speaking in, when they stopped talking, and when to translate, all without any additional input from users. It was magical when it worked!</div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/938aabbe-5eba-4672-b155-8d9ec9e6964a.png?h=5e70bee066544773cb298620b28663e8">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/938aabbe-5eba-4672-b155-8d9ec9e6964a_rw_3840.png?h=effa21e450e5a5187524aeeaf5fd7f4b"
+            data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/938aabbe-5eba-4672-b155-8d9ec9e6964a_rw_600.png?h=db6ce81fe04d567b12412910817973dd 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/938aabbe-5eba-4672-b155-8d9ec9e6964a_rw_1200.png?h=7353d4753db9305574b70f33689e0dd9 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/938aabbe-5eba-4672-b155-8d9ec9e6964a_rw_1920.png?h=e1322b6cbcd46a93385915bf4787b6e6 1920w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/938aabbe-5eba-4672-b155-8d9ec9e6964a_rw_3840.png?h=effa21e450e5a5187524aeeaf5fd7f4b 3840w,"
+            data-sizes="(max-width: 3840px) 100vw, 3840px"
+            width="3840"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div class="main-text">The problem was, for some languages the magic mic wasn't quite as accurate as it was for others. And because the UI emphasized the magic mic, many people were only using that, not even realizing there are two other manual language buttons.</div><div class="main-text">As a result, they were encountering errors and abandoning this mode for other options like typing.</div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6ba7943f-10d6-42e1-b6d4-be772798e6f6.gif?h=c186b181c50c5e1c02539a8298aae1ad">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6ba7943f-10d6-42e1-b6d4-be772798e6f6_rw_600.gif?h=1b0cc615f42c9c149c26ca28bcc85035"
+            data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/6ba7943f-10d6-42e1-b6d4-be772798e6f6_rw_600.gif?h=1b0cc615f42c9c149c26ca28bcc85035 320w,"
+            data-sizes="(max-width: 320px) 100vw, 320px"
+            width="320"
+            height="0"
+            style="padding-bottom: 172.81%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:nqdy; font-weight:700;"><span style="font-size:20px;" class="texteditor-inline-fontsize">PROPOSED CHANGES</span></span><br>Following the lessons we learned from improving the discoverability by making simple changes, we asked ourselves: what are the simplest changes we can make to the UI to make the experience more intuitive?<br></div><div>We made the manual language buttons much more visible by changing their shape and color. We still kept the magic mic of course, and even gave it a more descriptive text label. But it was no longer the big star of the UI.<br></div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/e63b121980737e2194086a9850ceea9c/4913992a-1de5-47e0-813a-acfe8335f572.png?h=a1cda512f7664adefa07325027b71951">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/e63b121980737e2194086a9850ceea9c/4913992a-1de5-47e0-813a-acfe8335f572_rw_1920.png?h=134826d590604366a1995010b76e478b"
+            data-srcset="https://pro2-bar-s3-cdn-cf3.myportfolio.com/e63b121980737e2194086a9850ceea9c/4913992a-1de5-47e0-813a-acfe8335f572_rw_600.png?h=c94e492067179e0d724622863f15cbc5 600w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/e63b121980737e2194086a9850ceea9c/4913992a-1de5-47e0-813a-acfe8335f572_rw_1200.png?h=c4fd2f4dc8e79c09b283884fb738f54c 1200w,https://pro2-bar-s3-cdn-cf3.myportfolio.com/e63b121980737e2194086a9850ceea9c/4913992a-1de5-47e0-813a-acfe8335f572_rw_1920.png?h=134826d590604366a1995010b76e478b 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:nqdy; font-weight:700;"><span style="font-size:20px;" class="texteditor-inline-fontsize">PIXEL BUDS</span></span><br>At the same time, we worked with the hardware team to make sure the experience worked with the Pixel Buds as well. We made small tweaks to the UI such as showing a headset icon when the Pixel Buds were connected. One of our brilliant designers, Liu Liu, even came up with the ingenious idea of the 'ice breaker' screen. </div><div>He had noticed in user studies that the most awkward part of the interaction was the beginning of the conversation. He made a visual screen with a standard message that the user could just show to the other person to break the ice.</div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/620f8155-2cc0-473f-83dc-0a42a8ff1ea8.png?h=d14c911dc28ce5c23ab4a889a4614fd7">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/620f8155-2cc0-473f-83dc-0a42a8ff1ea8_rw_1920.png?h=215d25f65a00033185aa712d9156c54b"
+            data-srcset="https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/620f8155-2cc0-473f-83dc-0a42a8ff1ea8_rw_600.png?h=943ef7722e1f7a7f8e193ca140dd54a6 600w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/620f8155-2cc0-473f-83dc-0a42a8ff1ea8_rw_1200.png?h=5d694d355ed455e9c5e0c0391df6fadf 1200w,https://pro2-bar-s3-cdn-cf5.myportfolio.com/e63b121980737e2194086a9850ceea9c/620f8155-2cc0-473f-83dc-0a42a8ff1ea8_rw_1920.png?h=215d25f65a00033185aa712d9156c54b 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/ad39c35f-9d66-4984-b14e-8fdce8a324bc.png?h=528eb7377c506f6b56a6d282159dbfc7">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/ad39c35f-9d66-4984-b14e-8fdce8a324bc_rw_3840.png?h=24f14ea9a7d15bd8e33dfa67422f324b"
+            data-srcset="https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/ad39c35f-9d66-4984-b14e-8fdce8a324bc_rw_600.png?h=efb8ef8c521aefbf371c33f28bfe9e97 600w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/ad39c35f-9d66-4984-b14e-8fdce8a324bc_rw_1200.png?h=d0b8e694b236b0a51a194e51844e3692 1200w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/ad39c35f-9d66-4984-b14e-8fdce8a324bc_rw_1920.png?h=1f9d60c8beaab1917660976440ad42e7 1920w,https://pro2-bar-s3-cdn-cf6.myportfolio.com/e63b121980737e2194086a9850ceea9c/ad39c35f-9d66-4984-b14e-8fdce8a324bc_rw_3840.png?h=24f14ea9a7d15bd8e33dfa67422f324b 3840w,"
+            data-sizes="(max-width: 3840px) 100vw, 3840px"
+            width="3840"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module text project-module-text align- editable js-editable js-project-module" style="  padding-top: px;
+  padding-bottom: px;
+">
+  <div class="rich-text js-text-editable module-text"><div><span style="font-family:nqdy; font-weight:700;"><span style="font-size:20px;" class="texteditor-inline-fontsize">RESULTS</span></span><br>The media has a fascination with real-time translations, so we received an incredible amount of press specially when the Pixel Buds feature was announced. More importantly, as a result of the UI changes as well as other technical improvements that made the conversation mode faster, we saw a noticeable increase in the usage of speech translations overall. While our quest for improving these and other features doesn't end here, this was a great first step in making our most magical features more discoverable and easier to use.</div></div>
+</div>
+
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/df6ec080-af52-4d55-95df-c0780551023a.png?h=c79f2436d1110a5a0938aa3fbfc31e5d">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/df6ec080-af52-4d55-95df-c0780551023a_rw_1920.png?h=c64bb0d6cb3c2bbe135b8a51c8a7847b"
+            data-srcset="https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/df6ec080-af52-4d55-95df-c0780551023a_rw_600.png?h=7013d402b8b2dbab322729465516af2d 600w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/df6ec080-af52-4d55-95df-c0780551023a_rw_1200.png?h=fa214813527bea5106c7a337b4c585d6 1200w,https://pro2-bar-s3-cdn-cf2.myportfolio.com/e63b121980737e2194086a9850ceea9c/df6ec080-af52-4d55-95df-c0780551023a_rw_1920.png?h=c64bb0d6cb3c2bbe135b8a51c8a7847b 1920w,"
+            data-sizes="(max-width: 1920px) 100vw, 1920px"
+            width="1920"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="project-module module image project-module-image editable js-editable js-project-module"  style="  padding-top: px;
+  padding-bottom: px;
+">
+
+    <div class="js-lightbox" data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/23fca071-4cbf-4a54-a2b3-8e110e317b59.png?h=0601f17dc50b0ed5a93946ba47d30d7c">
+          <img
+            class="js-lazy"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            data-src="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/23fca071-4cbf-4a54-a2b3-8e110e317b59_rw_1920.png?h=db7537e0e7b0f37ef353b4ed9f347d2b"
+            data-srcset="https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/23fca071-4cbf-4a54-a2b3-8e110e317b59_rw_600.png?h=3d8c6cfacf06bb48dc98caab668956ca 600w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/23fca071-4cbf-4a54-a2b3-8e110e317b59_rw_1200.png?h=650071912446c2f7c3fd2bc54b7ad921 1200w,https://pro2-bar-s3-cdn-cf1.myportfolio.com/e63b121980737e2194086a9850ceea9c/23fca071-4cbf-4a54-a2b3-8e110e317b59_rw_1920.png?h=db7537e0e7b0f37ef353b4ed9f347d2b 1290w,"
+            data-sizes="(max-width: 1290px) 100vw, 1290px"
+            width="1290"
+            height="0"
+            style="padding-bottom: 56.17%; background: rgba(0, 0, 0, 0.03)"
+            
+          >
+    </div>
+
+</div>
+
+            
+            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="back-to-top js-editable-target editable">
+          <a href="#"><span class="arrow">&uarr;</span><span class="preserve-whitespace">Back to Top</span></a>
+        </section>
+        <a class="back-to-top-fixed js-editable-target editable js-back-to-top" href="#">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve" class="icon icon-back-to-top">
+          <g>
+            <path d="M13.8,1.3L21.6,9c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.1,0.4s0,0.3-0.1,0.4c-0.1,0.1-0.1,0.3-0.3,0.4
+              c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.3,0.1-0.4,0.1c-0.1,0-0.3,0-0.4-0.1c-0.2-0.1-0.3-0.2-0.4-0.3L14.2,5l0,19.1
+              c0,0.2-0.1,0.3-0.1,0.5c0,0.1-0.1,0.3-0.3,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0.1-0.3,0.1-0.5,0.1c-0.1,0-0.3,0-0.4-0.1
+              c-0.1-0.1-0.3-0.1-0.4-0.3c-0.1-0.1-0.2-0.2-0.3-0.4c-0.1-0.1-0.1-0.3-0.1-0.5l0-19.1l-5.7,5.7C6,10.8,5.8,10.9,5.7,11
+              c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.2-0.2-0.4C4.1,10.2,4,10.1,4.1,9.9
+              c0-0.1,0-0.3,0.1-0.4c0-0.1,0.1-0.3,0.3-0.4l7.7-7.8c0.1,0,0.2-0.1,0.2-0.1c0,0,0.1-0.1,0.2-0.1c0.1,0,0.2,0,0.2-0.1
+              c0.1,0,0.1,0,0.2,0c0,0,0.1,0,0.2,0c0.1,0,0.2,0,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1C13.7,1.2,13.8,1.2,13.8,1.3z"/>
+          </g>
+          </svg>
+        </a>
+  </div>
+              <footer class="site-footer js-editable-target editable">
+                  <div class="social pf-footer-social">
+                    <ul>
+                    </ul>
+                  </div>
+                <div class="footer-text">
+                  Powered by <a href="http://portfolio.adobe.com" target="_blank">Adobe Portfolio</a>
+                </div>
+              </footer>
+        </main>
+      </div>
+    </div>
+  </div>
+<div class="cookie-banner js-cookie-banner">
+  <p>Insert copy here, which should vary depending on your region. <a class="consent-link" href="#">Accept</a></p>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-6458 -2604 16 16" class='close-btn'>
+    <g id="Group_1479" data-name="Group 1479" transform="translate(-8281.367 -3556.368)">
+      <rect id="Rectangle_6401" data-name="Rectangle 6401" class="stroke" width="1.968" height="20.66" transform="translate(1823.367 953.759) rotate(-45)"/>
+      <rect id="Rectangle_6402" data-name="Rectangle 6402" class="stroke" width="1.968" height="20.66" transform="translate(1824.758 968.368) rotate(-135)"/>
+    </g>
+  </svg>
+</div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"e7fb1b89a0","applicationID":"750147145","transactionName":"ZwZaYkJVDERXUxULCV5Me0NDQA1aGWsmJzJtQxdtS0QDQ14KT0gbbQ==","queueTime":0,"applicationTime":17,"atts":"S0FNFApPHxsUUUNYHU0e","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+<script type="text/javascript">
+  // fix for Safari's back/forward cache
+  window.onpageshow = function(e) {
+    if (e.persisted) { window.location.reload(); }
+  };
+</script>
+  <script type="text/javascript" src="//use.typekit.net/ik/4WLyTEpdgx-j-QIs-1aTzcWlE5pF7qq2dRkvQp5HsfXfen9ffHYEBsJzwD9oFDIDWDi8wDmRFewuwcBRwDjk5eBcwDMUZ2wt52JDFAZ8F2mcjRjXF2qoZcI-yMI7Ocuy-e8ldaszOcFzdP37OcuoSeNkieZzde8zOcFzdP37O1gkdDJlic88ikolpWgzS1scdhUTdkoRdhXCdABG-Auziev0jhNlOeuoSeNkieZzde8zOcFzdPU3ScvkOWZTZWS0dW83da4XZcNC-Av0jhNlOYiaikoljAyTdANXdkoRdhXKgeZXdcCKgeTopeXKgeoUZYqKgYZRShX7fbKgmsMMeMS6MKG4fHu9IMIjMkMfH6qJ7mbbMs6IJMJ7fbKnmgMgeMS6MKGHf4KbMsMfeMS6MKG4fHvgIMwjgfMfH6GJCwbgIMwjgPMfH6qJK3IbMU6YJMHbMpPq1ljB.js?cb="></script>
+  <script type="text/javascript">var __config__ = {"page_id":"p5ad77d75ae132c6306dff98f884185d9d18843a192e61fc0371b2","theme":{"name":"jess"},"pageTransition":true,"linkTransition":true,"disableDownload":false,"localizedValidationMessages":{"required":"This field is required","Email":"This field must be a valid email address"},"lightbox":{"enabled":false},"cookie_banner":{"enabled":false},"googleAnalytics":{"trackingCode":"UA-33527670-1","anonymization":false}};</script>
+  <script type="text/javascript" src="/site/translations?cb="></script>
+  <script type="text/javascript" src="/dist/js/main.js?cb="></script>
+</html>

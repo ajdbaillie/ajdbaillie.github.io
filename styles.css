@@ -6,10 +6,18 @@ font-family: 'Roboto', sans-serif;
 font-size: 1em;
 }
 
+.nav-wrapper {
+    background-color: #e6e6e6;
+    height: 70px;
+    width: 100vw;
+    position: absolute;
+}
+
 .header-navbar {
     background: transparent;
     height: 70px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     width: 100vw;
 }
 
@@ -85,6 +93,10 @@ color: #424242;
 transition: all 0.3s ease;
 }
 
+.current-page {
+    color: black;
+}
+
 
 .header_container {
     display: flex;
@@ -115,8 +127,8 @@ transition: all 0.3s ease;
 .header_text {
     background-color: inherit;
     width: auto;
-    height: 100vh;
-    padding: 10% 0% 0% 16% ;
+    height: 100%;
+    padding: 10% 0% 10% 16% ;
     margin: 0 auto;
 }
 .header_text h1 {
@@ -140,7 +152,6 @@ line-height: 200%;
     display: inline-block;
     color: black;
     font-weight: bold;
-    position: relative;
     margin: 2% 0% 0% 0.7%;
     padding: 1% 1% 1% 1%;
     border: 2px black solid;
@@ -268,6 +279,14 @@ background-color: #e6e6e6;
     
 }
 
+.abouttext p{
+margin-top: 5%;
+font-size: 1.1em;
+font-weight: 100;
+color: rgb(78, 78, 78);
+line-height: 200%;
+}
+
 .Contact_container{
     position: relative;
     padding: 10% 0;
@@ -377,7 +396,6 @@ background-color: #e6e6e6;
 }
 
 /* setting heights for hero photo */
-
 @media screen and (max-width: 1200px) {
     .header_photo img {
         height: 85vh;
@@ -398,6 +416,7 @@ background-color: #e6e6e6;
     }
 }
 
+
 @media screen and (max-width: 920px) {
     .header_photo img {
         height: 75vh;
@@ -410,8 +429,8 @@ background-color: #e6e6e6;
 
 @media screen and (max-width: 850px) {
     .header_photo img {
-        height: auto;
-        width: 75vw;
+        height: 60vh;
+        width: auto;
     }
     .header_container {
         height: 100%;
@@ -432,8 +451,7 @@ background-color: #e6e6e6;
     .header_text {
         background-color: inherit;
         width: auto;
-        height: 50vh;
-        padding: 30% 0% 0% 5% ;
+        padding: 10% 0% 0% 5% ;
         margin: 0 0;
     }
     .portfolio_container {
@@ -494,7 +512,9 @@ background-color: #e6e6e6;
 
         .header_photo {
             height: 100%;
-            margin-top:15%;
+            }
+         .header_text {
+            padding-bottom: 25%;
             }
 
     .contactheader{
@@ -513,8 +533,10 @@ background-color: #e6e6e6;
 @media screen and (max-width: 470px) {
         .header_photo {
             height: 100%;
-            margin-top:35% ;
             }
+        .header_text {
+            padding-bottom: 25%;
+        }
     .navbar__container {
         display: flex;
         justify-content: space-between;
@@ -596,4 +618,50 @@ background-color: #e6e6e6;
 h5 {
     font-weight: 900 !important;
     font-size: 2.5rem;
+}
+
+/* About section */
+
+
+.about_photowrapper {
+height: 400px;
+width: 100vw;
+background: url(cover-big.jpg) no-repeat center;
+background-size: cover;
+}
+
+.aboutpage_container {
+    background-color: #e6e6e6;
+    display: block;
+    padding: 4vh 0 4vh 0;
+}
+
+.aboutme-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0px auto;
+    justify-content: space-between;
+    position: relative;
+    background-color: transparent;
+    max-width: 792px;
+
+}
+
+.aboutme-item p {
+    margin-top: 5%;
+    font-size: 1.1em;
+    font-weight: 100;
+    color: rgb(78, 78, 78);
+    line-height: 200%;
+}
+
+@media screen and (min-width: 1090px) {
+.about_photowrapper {
+    height: 400px;
+    width: 100vw;
+    background: url(cover.jpg) no-repeat center;
+    background-size: cover;
+}
 }
