@@ -6,8 +6,14 @@ font-family: 'Roboto', sans-serif;
 font-size: 1em;
 }
 
+h1 {
+    text-align: center;
+    background-color: inherit;
+    font-size: 5em; 
+}
+
 .nav-wrapper {
-    background-color: #e6e6e6;
+    background-color: transparent;
     height: 70px;
     width: 100vw;
     position: absolute;
